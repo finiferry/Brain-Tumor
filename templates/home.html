@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>Home</title>
+</head>
+
+
+
+
+<body>
+
+    <style>
+      #border1{
+        width: 300px;
+        border: 2px solid black;
+        padding: 20px;
+        border-radius: 10px;
+	      box-shadow: 5px 20px 50px #000;
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0, 0.4); 
+        
+      }
+      body{
+        background-image: url(/static/svg/pexels-doctor.jpg);
+        
+      }
+    </style>
+
+    <div id="border1">
+<div>
+  {% with messages = get_flashed_messages() %}
+{% if messages %}
+  {% for message in messages %}
+    <h1 style="color: white;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; text-transform: uppercase;">{{ message }}</h1>
+  {% endfor %}
+
+{% endif %}
+{% endwith %}
+</div>
+
+    {% if uploaded_image %}
+    <div class="image-preview">
+        <img id="img_show" src="{{ url_for('send_uploaded_file', filename=uploaded_image) }}" />
+                </div>  
+    {% endif %}
+
+    <div>
+      <form action="" method="post" enctype="multipart/form-data">
+
+        <div class="contain">
+            <input type="file"  name="f" >
+        </div>
+    
+        <button type="submit">predict tumor</button>
+    
+        </form>
+    
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up / Login Form</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+
+</head>
+<style>
+	body{
+		background-image: url(/static/svg/pexels-login.jpg);
+		background-size: cover;
+	}
+</style>
+<body>
+	<div  id="container" class="container">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<div class="input-group">
+						<i class='bx bxs-user'></i>
+						<input type="text" id="username" placeholder="Username">
+					</div>
+					<div class="input-group">
+						<i class='bx bx-mail-send'></i>
+						<input type="email" id="email" placeholder="Email">
+					</div>
+					<div class="input-group">
+						<i class='bx bxs-lock-alt'></i>
+						<input type="password" id="password" placeholder="Password">
+					</div>
+					<div class="input-group">
+						<i class='bx bxs-lock-alt'></i>
+						<input type="password" id="re_password" placeholder="Confirm password">
+					</div>
+					<button onclick="Signup('/')">
+						Sign up
+					</button>
+
+			</div>
+
+			<div class="login">
+					<label for="chk" aria-hidden="true">Login</label>
+					<div class="input-group">
+						<i class='bx bxs-user'></i>
+						<input type="text"  id="login_username" placeholder="Username">
+					</div>
+					<div class="input-group">
+						<i class='bx bxs-lock-alt'></i>
+						<input type="password" id="login_password" placeholder="Password">
+					</div>
+					<button onclick="Login('/')">
+						Sign in
+			</div>
+	</div>
+	<script src="{{url_for('static', filename='js/index.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    <script src="{{url_for('static', filename='js/post.js')}}"></script>
+</body>
+</html>
